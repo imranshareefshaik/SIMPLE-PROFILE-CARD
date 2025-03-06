@@ -1,0 +1,156 @@
+/* Vibrant gradient background with animation */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6f61, #6b48ff, #ff6f61);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Subtle overlay for contrast */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+/* Profile card with glowing effect */
+.profile-card {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(107, 72, 255, 0.5);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #6b48ff;
+}
+
+/* Enhanced hover effect */
+.profile-card:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(107, 72, 255, 0.7);
+}
+
+/* Profile image with border and glow */
+.profile-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 5px solid #6b48ff;
+    position: relative;
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+}
+
+.profile-card:hover .profile-img {
+    filter: brightness(1.3);
+}
+
+/* Content section with gradient */
+.content {
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(to top, #ffffff, #f0f0ff);
+    border-radius: 0 0 20px 20px;
+}
+
+/* Name styling with glow */
+.name {
+    margin: 0;
+    font-size: 28px;
+    color: #2c2c54;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(107, 72, 255, 0.3);
+}
+
+/* Designation styling */
+.designation {
+    margin: 10px 0 20px;
+    color: #6b48ff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Bio styling */
+.bio {
+    color: #34495e;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Social icons with animation */
+.social-icons a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    margin: 0 12px;
+    background: #dfe6e9;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #2d3436;
+    font-size: 22px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icons a:hover {
+    background: #6b48ff;
+    color: white;
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 0 15px rgba(107, 72, 255, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    .profile-card {
+        width: 90%;
+        margin: 20px;
+    }
+    
+    .name {
+        font-size: 24px;
+    }
+    
+    .designation {
+        font-size: 16px;
+    }
+    
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin: 0 8px;
+    }
+}
+
+/* Ensure smooth rendering */
+* {
+    box-sizing: border-box;
+}
